@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="MessageBox.axaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AppIcon.png" />
+    <None Remove="Assets\plus-256x256.png" />
+    <None Remove="icon.png" />
+    <None Remove="plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Assets\plus-256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\plus-256x256.png" />
+    <EmbeddedResource Include="AppIcon.png" />
+    <EmbeddedResource Include="icon.png" />
+    <EmbeddedResource Include="MessageBox.axaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.9.12" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+    <PackageReference Include="CmlLib.Core" Version="3.0.0" />
+    <PackageReference Include="Dropbox.Api" Version="5.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FireSharp.Core">
+      <HintPath>..\..\..\Desktop\FireSharp.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

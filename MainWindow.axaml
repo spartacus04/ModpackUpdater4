@@ -1,0 +1,46 @@
+﻿<Window Name="Window"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="530" Height="450" CanResize="False"
+        x:Class="ModpackUpdater4.MainWindow"
+        Title="ModpackUpdater4">
+  <Grid Height="450" Width="550">
+    <TabControl Name="tabControl1" Height="425" Width="500" TabStripPlacement= "Top" Margin="-20,0,+17,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="Tab_SelectionChanged">
+      <TabItem Name="tabPage1" Header="Scarica un Modpack" >
+        <Canvas Name="cantabPage1" Height="399" Width="381" >
+          <Button Name="DownloadBtn" Height="37" Width="463" Margin="-41,100,43,367" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="DownloadModpack">Scarica</Button>
+          <Button Name="ConfigBtn" Height="70" Width="92"  Margin="329,10,73,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="ConfigureFromJson">Configurazione</Button>
+          <TextBox Watermark="Nome" Name="NameTxt" Height="30" Width="350"  Margin="-41,10,142,437" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBox Watermark="Token" Name="TokenTxt" Height="30" Width="350"  Margin="-41,50,142,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBlock Name="StatusTextBlock" Height="20" Width="463" FontSize="10" FontFamily="Microsoft Sans Serif"  Margin="-41,300,356,92" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Fermo</TextBlock>
+          <ProgressBar Name="DownloadPB" Height="37" Width="463" Margin="-41,320,43,367" BorderBrush="Black" BorderThickness="1" Background="LightGray" Maximum="100"></ProgressBar>
+        </Canvas>
+      </TabItem>
+      <TabItem Name="tabPage3" Header="Maneggia un Modpack" >
+        <Canvas Name="cantabPage3" Height="399" Width="381" >
+          <TextBox Name="Modlist" Height="228" Width="463" Margin="-41,130,40,69" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" IsReadOnly="True"></TextBox>
+          <Button Name="UpdateBtn" Height="30" Width="463" Margin="-41,50,40,370" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CheckUpdatesBtn">Controlla Aggiornamenti</Button>
+          <Button Name="UninstallBtn" Height="30" Width="463"  Margin="-41,90,40,400" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="UninstallBtn">Disinstalla</Button>
+          <ComboBox Name="ModpackCBox" Height="30" Width="463" Margin="-41,10,40,367" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        </Canvas>
+      </TabItem>
+      <TabItem Name="tabPage2" Header="Crea un Modpack" >
+        <Canvas Name="cantabPage2" Height="399" Width="381" >
+          <Button Name="UploadBtn" Height="37" Width="463" Margin="-41,200,43,367" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="ValidateInfo">Carica</Button>
+          <Button Name="ForgeBtn" Height="30" Width="92"  Margin="329,120,73,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SelectForgePath">Scegli</Button>
+          <Button Name="ModsBtn" Height="30" Width="92"  Margin="329,160,73,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SelectModPath">Scegli</Button>
+          <Image Name="ModpackIcon" Width="100" Height="100" MaxWidth="100" MaxHeight="100" Margin="329,10,73,411" Source="resm:ModpackUpdater4.plus.png"></Image>
+          <TextBox Watermark="Nome" Name="NameTxtU" Height="30" Width="350"  Margin="-41,10,142,437" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBox Watermark="Token" Name="TokenTxtU" Height="30" Width="350"  Margin="-41,50,142,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBox Watermark="Forge" Name="ForgeTxtU" Height="30" Width="350"  Margin="-41,120,142,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBox Watermark="Mods" Name="ModsTxtU" Height="30" Width="350"  Margin="-41,160,142,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+          <TextBlock Name="LinkTextBlock" Height="20" Width="463" FontSize="10" FontFamily="Microsoft Sans Serif"  Margin="-41,90,356,92" HorizontalAlignment="Right" VerticalAlignment="Bottom">Come lo ottengo?</TextBlock>
+          <ProgressBar Name="UploadPB" Height="37" Width="463" Margin="-41,320,43,367" BorderBrush="Black" BorderThickness="1" Background="LightGray" Maximum="100"></ProgressBar>
+          <TextBlock Name="StatusTextBlockU" Height="20" Width="463" FontSize="10" FontFamily="Microsoft Sans Serif"  Margin="-41,300,356,92" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Fermo</TextBlock>
+        </Canvas>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</Window>
