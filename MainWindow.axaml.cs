@@ -32,25 +32,12 @@ namespace ModpackUpdater4
 #endif
         }
 
-        private IFirebaseConfig config = new FirebaseConfig()
-        {
-            AuthSecret = "0EzQI0hBS9VFfxl1p9MxVY2WshoA8ChhXIapPBgB",
-            BasePath = "https://modupdater-afe8b.firebaseio.com/"
-        };
 
-        private IFirebaseClient client;
 
-        #region DownloadParameters
 
         private string ModpackBaseDirectory;
         private string ModpackModsDirectory;
-        private string DropboxKey = "";
-        private List<string> FilesToDelete = new List<string>();
-        private List<string> FilesToDownload = new List<string>();
-        private string forgeversion;
         private readonly string ModpackSavePath = Path.Combine(MinecraftPath.GetOSDefaultPath(), "Modpacks_profiles.json");
-
-        #endregion DownloadParameters
 
         #region UIElements
 
@@ -88,7 +75,6 @@ namespace ModpackUpdater4
         {
             AvaloniaXamlLoader.Load(this);
 
-            client = new FirebaseClient(config);
 
             tab = this.FindControl<TabControl>("tabControl1");
             nome = this.FindControl<TextBox>("NameTxt");

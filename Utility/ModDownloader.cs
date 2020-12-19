@@ -19,17 +19,11 @@ namespace ModpackUpdater4
         public string ModpackBaseDirectory;
         public string ModpackModsDirectory;
 
-        private IFirebaseConfig config = new FirebaseConfig()
-        {
-            AuthSecret = "0EzQI0hBS9VFfxl1p9MxVY2WshoA8ChhXIapPBgB",
-            BasePath = "https://modupdater-afe8b.firebaseio.com/"
-        };
-
         private IFirebaseClient client;
 
         public ModDownloader()
         {
-            client = new FirebaseClient(config);
+            client = new FirebaseClient(Utilities.Credentials());
         }
 
         /// <summary>

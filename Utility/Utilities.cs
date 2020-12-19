@@ -1,4 +1,6 @@
-﻿using CmlLib.Core;
+﻿using Avalonia;
+using Avalonia.Platform;
+using CmlLib.Core;
 using Dropbox.Api;
 using Newtonsoft.Json;
 using System;
@@ -8,6 +10,7 @@ using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using FireSharp.Core.Config;
 
 namespace ModpackUpdater4
 {
@@ -196,6 +199,17 @@ namespace ModpackUpdater4
             }
 
             return res.ToString();
+        }
+
+        static public FirebaseConfig Credentials()
+        {
+            var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
+
+            StreamReader sr = new StreamReader(assets.Open(new Uri("resm:ModpackUpdater4.FirebaseCredentials.json")));
+
+            string json = sr.ReadToEnd();
+            return JsonConvert.DeserializeObject<FirebaseConfig>(json);
+
         }
     }
 }
