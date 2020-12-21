@@ -28,7 +28,7 @@ namespace ModpackUpdater4
 
         public async Task<string> BeginUpload(MainWindow sender, string name, string token, string ForgePath, string ModPath, bool IconSelected = false)
         {
-            List<string> LocalFiles = GetLocalFiles(sender, name);
+            List<string> LocalFiles = GetLocalFiles(sender, ModPath);
             List<string> OnlineFiles = await GetOnlineFiles(sender, token);
 
             sender.Message("Comparo le versioni...");

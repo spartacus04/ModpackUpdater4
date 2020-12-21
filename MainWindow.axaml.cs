@@ -33,8 +33,6 @@ namespace ModpackUpdater4
         }
 
 
-
-
         private string ModpackBaseDirectory;
         private string ModpackModsDirectory;
         private readonly string ModpackSavePath = Path.Combine(MinecraftPath.GetOSDefaultPath(), "Modpacks_profiles.json");
@@ -56,8 +54,8 @@ namespace ModpackUpdater4
         private TextBlock link;
         private Avalonia.Controls.Image image;
         private TextBox ForgeU;
-        private TextBox ModU;
-        private TextBox NomeU;
+        public TextBox ModU;
+        public TextBox NomeU;
         private TextBox DropboxU;
         private Button SelectForge;
         private Button SelectMods;
